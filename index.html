@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija</title>
+    <style>
+        body{
+            position: relative;
+            background-color: #050210;
+        }
+
+        .box{
+            margin: 200px auto;
+        }
+        .box-1{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+
+            animation-name: my-animation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition-timing-function: linear;
+            animation-play-state: running;
+           }
+
+        .box-1:before{
+            content: '';
+            position: absolute;
+            filter: blur(50px);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);      
+
+            animation-name: my-animation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition-timing-function: linear;
+            animation-play-state: running;
+        }
+        @keyframes my-animation {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            }
+
+
+        .box-2{
+            position: absolute;
+            background: #07011b;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            margin: 20px 20px;
+        }
+
+        .box-2::after {
+            content: '';
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: #0d0622;
+            transform: scale(1);
+            animation: scale 1s linear infinite;
+            }
+
+            @keyframes scale {
+            0% {
+            transform: scale(0);
+            }
+            100% {
+            transform: scale(1); 
+            }
+        }                   
+    </style>
+</head>
+<body>
+    <div class="box">
+            <div class="box-1">
+                <div class="box-2"></div>
+            </div>
+    </div>
+</body>
+</html>
